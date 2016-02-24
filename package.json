@@ -1,0 +1,32 @@
+{
+  "name": "notassignment",
+  "version": "1.0.0",
+  "description": "nothing here",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lunglungyu/OghsmpwMjUS9ffXDqvr8hQ.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lunglungyu/OghsmpwMjUS9ffXDqvr8hQ/issues"
+  },
+  "homepage": "https://github.com/lunglungyu/OghsmpwMjUS9ffXDqvr8hQ#readme",
+  "dependencies": {
+    "bluebird": "^3.3.1",
+    "cheerio": "^0.20.0",
+    "co": "^4.6.0",
+    "http-status-codes": "^1.0.6",
+    "mongodb": "^2.1.7",
+    "nodestalker": "^0.1.21",
+    "request": "^2.69.0"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "eslint-config-aftership": "^1.11.1"
+  }
+}
