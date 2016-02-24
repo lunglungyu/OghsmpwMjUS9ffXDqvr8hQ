@@ -22,6 +22,7 @@
     "co": "^4.6.0",
     "http-status-codes": "^1.0.6",
     "mongodb": "^2.1.7",
+    "mongoskin": "^2.0.3",
     "nodestalker": "^0.1.21",
     "request": "^2.69.0"
   },

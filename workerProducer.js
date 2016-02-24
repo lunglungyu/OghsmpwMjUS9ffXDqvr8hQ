@@ -46,7 +46,6 @@ function workerProducer(){
   }
   console.log('Number of job to create:'+number_of_job_to_create);
   //commonFunc.getBeanstalkdServerInfo(RESTAPI_FOR_BEANSTALKD_SERVER,RESTAPI_KEY,null);
-  var server_info = moduleCommonFunc.getBeanstalkdServerInfo(RESTAPI_FOR_BEANSTALKD_SERVER,RESTAPI_KEY,runJob);
-
+  moduleCommonFunc.getBeanstalkdServerInfoAndRunCallback(RESTAPI_FOR_BEANSTALKD_SERVER,RESTAPI_KEY,runJob);
 }
 workerProducer();

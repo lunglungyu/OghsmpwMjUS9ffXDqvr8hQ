@@ -9,7 +9,7 @@ class CommonFunc {
   CommonFunc() {
 
   }
-  getBeanstalkdServerInfo(restapi_url, restapi_key, callback){
+  getBeanstalkdServerInfoAndRunCallback(restapi_url, restapi_key, callback){
     var postReq = {
       url: restapi_url,
       headers: {
@@ -30,9 +30,12 @@ class CommonFunc {
     });
     return null;
   }
-  getParsedRateString(rate){
-    return parseFloat(rate).toFixed(DECIMAL_NEED);
+  getParsedRateString(element){
+    var end_pos = element.indexOf("&#");
+    element = element.substring(0,end_pos);
+    console.log(element);
+    return parseFloat(element).toFixed(DECIMAL_NEED).toString();
   }
 }
-module.exports = new CommonFunc();
-//module.exports = CommonFunc;   
+module.exports = new CommonFunc();// two way of exporting function in this way no need create new instance on each reference
+//module.exports = CommonFunc;

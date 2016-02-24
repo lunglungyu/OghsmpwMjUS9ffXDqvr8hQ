@@ -6,4 +6,4 @@
 
 **workerConsumer.js** For Solving tasks from message queue and write database
 
-**workerProducer.js** For Inserting tasks into message queue
+**workerProducer.js** For Seeding and inserting tasks into message queue
