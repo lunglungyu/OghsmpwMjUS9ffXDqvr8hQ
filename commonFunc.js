@@ -30,7 +30,7 @@ class CommonFunc {
   * return call url for convert rate
   * @param {string} restapi_url - call for getting message queue server address
   * @param {string} restapi_key - api key for restapi call
-  * @param {function} call back for run task/nothing
+  * @param {function} callback - call back for run task/nothing
   */
   getBeanstalkdServerInfoAndRunCallback(restapi_url, restapi_key, callback){
     var postReq = {
