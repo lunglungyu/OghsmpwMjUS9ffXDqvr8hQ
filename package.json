@@ -4,7 +4,7 @@
   "description": "nothing here",
   "main": "index.js",
   "scripts": {
-    "test": "grunt lint"
+    "test": "mocha ./unitTest.js"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,14 @@
   "homepage": "https://github.com/lunglungyu/OghsmpwMjUS9ffXDqvr8hQ#readme",
   "dependencies": {
     "bluebird": "^3.3.1",
+    "chai": "^3.5.0",
+    "chai-string": "^1.1.6",
     "cheerio": "^0.20.0",
     "co": "^4.6.0",
+    "eslint-plugin-react": "^4.1.0",
+    "grunt": "^0.4.5",
     "http-status-codes": "^1.0.6",
+    "mocha": "^2.4.5",
     "mongodb": "^2.1.7",
     "mongoskin": "^2.0.3",
     "nodestalker": "^0.1.21",

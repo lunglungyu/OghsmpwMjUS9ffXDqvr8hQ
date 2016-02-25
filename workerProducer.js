@@ -9,6 +9,12 @@ const libRequest = require('request');
 const libHttpStatusCodes = require('http-status-codes');
 const moduleCommonFunc = require('./commonFunc');//cache the same instance
 var number_of_job_to_create = 1;
+
+/**
+* createTask
+* insert one record into beanstalk server
+* @param {string} beanstalkd_url , format:  HOST:POST
+*/
 function createTask(beanstalkd_url) {
   var client = libNodestalker.Client(beanstalkd_url);
   client.use(TUBE_NAME).onSuccess(function(data) {
@@ -24,18 +30,34 @@ function createTask(beanstalkd_url) {
   });
 }
 /**
+createTaskRepeated
 function default parameters may not be enabled in old version v8 engine , wrap a simple One
+* @param {string} beanstalkd_url , format:  HOST:POST
+* @param {number} count , number of record to insert
 */
 function createTaskRepeated(beanstalkd_url, count){
   for(var i = 0; i < count; ++i){
     createTask(beanstalkd_url);
   }
 }
+/**
+runJob
+Callback for creating multiple tasks
+* @param {string} server_info  json string for server info
+*/
+
 function runJob(server_info){
   var beanstalkd_url = server_info.data.host + ":" + server_info.data.port;
   //console.log(beanstalkd_url);
   createTaskRepeated(beanstalkd_url,number_of_job_to_create);
 }
+/**
+workerProducer
+Entry point, take command line parameter for number of task to insert
+* @param {string} argv[0]  - default: node
+* @param {string} argv[1]  - default: javasript filename
+* @param {string} argv[2]  (optional) number of task to seed - default: 1
+*/
 function workerProducer(){
   var args_number = process.argv.length;
   //console.log('Number of argument :'+args_number);
